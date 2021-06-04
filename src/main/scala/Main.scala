@@ -5,6 +5,7 @@ import algebra.Monoid
 
 final class AdditiveSemigroupOps[A](lhs: A)(implicit as: AdditiveSemigroup[A]) {
   def +(rhs: A): A = as.plus(rhs, lhs)
+  def ^(rhs: A): A = as.plus(rhs, lhs)
 }
 
 trait AdditiveSemigroupSyntax {
@@ -25,6 +26,10 @@ object App {
     def res[A]: Map[Int, A] = {
       val a: Map[Int, A] = Map.empty
       val b: Map[Int, A] = Map.empty
+      // Calls the operator on AdditiveSemigroupOps
+      a ^ b
+      // Calls the operator + on AdditiveSemigroupOps only in Scala 2
+      // In Scala 3 tries to call `+` on Map
       a + b
     }
   }
