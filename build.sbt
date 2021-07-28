@@ -1,5 +1,7 @@
 val scala2Version = "2.13.6"
-val scala3Version = "3.0.0"
+val scala3Version = "3.0.1-RC1"
+
+Global / onChangedBuildSource := ReloadOnSourceChanges
 
 lazy val root = project
   .in(file("."))
