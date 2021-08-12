@@ -22,6 +22,7 @@ object App {
   def main(args: Array[String]): Unit = {
     import syntax.additiveSemigroup._
     implicit def IntAlgebra[A]: AdditiveSemigroup[Map[Int, A]] = ???
+    def cfor[A](init: A)(test: A => Boolean) = ???
 
     def res[A]: Map[Int, A] = {
       val a: Map[Int, A] = Map.empty
